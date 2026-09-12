@@ -3,6 +3,9 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Trap Kaline Game</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ff0055">
+<link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/138/138817.png">
 <style>
 body{margin:0;background:#000;color:#fff;font-family:Arial;text-align:center}
 #game{width:100vw;height:65vh;background:#111;border:2px solid red;position:relative;overflow:hidden}
@@ -12,6 +15,7 @@ body{margin:0;background:#000;color:#fff;font-family:Arial;text-align:center}
 button{padding:14px 28px;margin:6px;border:none;border-radius:12px;font-weight:bold;font-size:18px}
 #trap{background:red;color:white}
 #beat{background:yellow;color:black}
+#support{background:#00c853;color:white}
 </style>
 </head>
 <body>
@@ -21,6 +25,7 @@ button{padding:14px 28px;margin:6px;border:none;border-radius:12px;font-weight:b
 <div id="game"></div>
 <button id="trap" onclick="trap()">TRAP 💥</button>
 <button id="beat" onclick="beat()">🎵 PLAY BEAT</button>
+<button id="support" onclick="window.open('https://wa.me/211920394480?text=Bro%20I%20love%20Trap%20Kaline%20Game%20🇸🇸','_blank')">💰 SUPPORT 0920394480</button>
 <script>
 let s=0,hs=localStorage.getItem('trapHS')||0,blocks=[],audio=null;
 document.getElementById('high').innerHTML='High Score: '+hs;
@@ -51,6 +56,7 @@ function loop(){
  requestAnimationFrame(loop);
 }
 loop();
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js');}
 </script>
 </body>
 </html>
